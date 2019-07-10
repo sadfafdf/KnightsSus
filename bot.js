@@ -33,57 +33,22 @@ var ti={}
 ,spee={}
 ,attentions={};
 
-
-
-client.on('message', message => {
-
-     if (message.author.bot) return;
-
-    if (message.content.startsWith("رابط")) {
-
-        message.channel.createInvite({
-
-        thing: true,
-
-        maxUses: 10,
-
-        maxAge: 36000,
-
-    }).then(invite =>
-
-      message.author.sendMessage(invite.url)
-
-    )
-
-    const embed = new Discord.RichEmbed()
-
-        .setColor("RANDOM")
-
-          .setDescription(" تم أرسال الرابط برسالة خاصة ")
-
-           .setAuthor(client.user.username, client.user.avatarURL)
-
-                 .setAuthor(client.user.username, client.user.avatarURL)
-
-                .setFooter('طلب بواسطة: ' + message.author.tag)
-
- 
-
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-
-              const Embed11 = new Discord.RichEmbed()
-
-        .setColor("RANDOM")
-
-       
-
-    .setDescription(" مدة الرابط : يوم  عدد استخدامات الرابط : 10 ")
-
-      message.author.sendEmbed(Embed11)
-
-    }
- 
+client.on("ready", () => { // by boyka#9979
+  const channel = client.channels.get("598556965135974410"); 
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    console.log("Successfully connected.");
+  }).catch(e => { // by boyka#9979
+    console.error(e);
+  });
 });
+
+client.on('guildMemberAdd', member => {
+    member.createDM().then(function (channel) {
+return channel.send("**Welcome to Knights. Please Join in Knights Shop :** :gear: https://discord.gg/EJate6v")
+    }
+    )});
+
 
 
 client.on('message', message => {
