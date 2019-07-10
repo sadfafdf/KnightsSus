@@ -212,7 +212,7 @@ client.on('message', message => {
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
-    if(message.content.startsWith(prefix + 'bcc')) {
+    if(message.content.startsWith(prefix + 'bccc')) {
      let filter = m => m.author.id === message.author.id;
  
  let recembed = new Discord.RichEmbed()
@@ -629,35 +629,6 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
  })
     }});
 
-client.on('message', message => {  ///By KillerFox_                    
-    if(!message.channel.guild) return;
-       if(message.content.startsWith(prefix + 'تفعيل')) {
-        let modlog = client.channels.find('name', 'chat'); /// m غير اسم الروم اذا تبي
-       if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       var b = ['5587' ,' 9978' , '3785' , '7734' , '9864' , '7681' , '3758' , '7834' , '3489' , '1382' , '7389' , '8762' , '0889' , '0388' , '3316' , '0976' , '8603' , '1842' , '4565' , '9524' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '9834' , '7668' , '0378' , '7055' , '9733' , '9876' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '0069' , '0807' , '0673' , '0813' , '1235' , '6879'];
-var b2 = ['5587' ,' 9978' , '3785' , '7734' , '9864' , '7681' , '3758' , '7834' , '3489' , '1382' , '7389' , '8762' , '0889' , '0388' , '3316' , '0976' , '8603' , '1842' , '4565' , '9524' , '9524' , '0964' , '5930' , '5678' , '9567' , '6099' , '7058' , '0001' , '1324' , '9834' , '7668' , '0378' , '7055' , '9733' , '9876' , '9846' , '9685' , '8574' , '8975' , '9845' , '9862' , '0069' , '0807' , '0673' , '0813' , '1235' , '6879'];
-        var b3 = Math.floor(Math.random()*x.length)
-       message.channel.sendMessage(`\n \`${b[b3]}\` ** : اكتب الرقم التالي للتفعيل **`).then(msg => {
-          var r = message.channel.awaitMessages(msg => msg.content == b2[b3], { maxMatches : 1, time : 60000, errors : ['time'] })
-               r.catch(() => {
-            message.delete()
-            r.delete()
-            msg.delete()
-        })
-  r.then(s=> {
- 
-                                   message.member.addRole(message.guild.roles.find("name", "pic")); /// الربته التجي للشخص
-       
-                            msg.delete();
-                                   message.channel.send(`**تم تفعيل حسابك.**`).then(m => m.delete(1000));
-     
-                                   })
-       })
-                                   }
-                                   });
-
-
-
 client.on('message', message => {
             if (message.content === prefix + 'help-ar') {
               message.channel.send('** تم الارسال في الخاص :white_check_mark: **');
@@ -667,7 +638,7 @@ client.on('message', message => {
 
 client.on('message', message => {
             if (message.content === '!') {
-              message.channel.send('**__W__**el**__c__** **ome** **__to__** **__Master__**');
+              message.channel.send('**__W__**el**__c__** **ome** **__to__** **__Knights__**');
                
             }
 }); 
@@ -719,28 +690,7 @@ client.on('message', message => {
             }
 });
 
-client.on('message', message => {
-            if (message.content === 'الشعار') {
-              message.channel.send('**!Mr | Name شعارك في الديسكورد**');
-               
-            }
-});
-
-client.on('message', message => {
-            if (message.content === 'الشعار') {
-              message.channel.send('**[ ✾ ] : شعارك في اللعبة **');
-               
-            }
-});
-
-client.on('message', message => {
-            if (message.content === 'الوان') {
-              message.channel.send('https://images-ext-2.discordapp.net/external/co-Y4SjdBEOFlzn6LWfeen9ZBM9eqB0aTgDPJ6VkX9s/%3Fwidth%3D318%26height%3D300/https/media.discordapp.net/attachments/593216139287461888/593390824365228033/colors.png');
-               
-            }
-});
-
-const developers = ["567694723679125514","id"]
+const developers = ["529091974364397568","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -902,31 +852,22 @@ client.on('message', message => {
 
 
 
-
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "insdfg") {
-
-	     
- message.author.sendMessage(`
-https://discordapp.com/oauth2/authorize?client_id=570719536249176064&permissions=8&scope=bot
-`);
- 
- 
-    }
-});
-
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "sugdfggp") {
-
-	     
- message.author.sendMessage(`
- :gear: Support :gear:
-https://discord.gg/Vd3pQV8
-`);
-    }
-});
+client.on("message", message => {
+                      if(message.content === 'رابط' ) {
+                          message.channel.send('**تم ارسال الرابط في الخاص | مدة الرابط: يوم | عدد المستخدمين: 10**').then(msg => {
+                              msg.edit('وش فيك منتظر رح شوف الكود فالخاص')
+                          
+                          });
+                        message.channel.createInvite({
+                        thing: true,
+                        maxUses: 10,
+                        maxAge: 86400
+                        }).then(invite =>
+       
+                               message.author.sendMessage(invite.url)
+                              
+                             )                         
+                    }});
 
 
 
