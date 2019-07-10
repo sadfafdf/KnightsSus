@@ -855,7 +855,7 @@ client.on('message', message => {
 client.on("message", message => {
                       if(message.content === 'رابط' ) {
                           message.channel.send('**تم ارسال الرابط في الخاص | مدة الرابط: يوم | عدد المستخدمين: 10**').then(msg => {
-                              msg.edit('وش فيك منتظر رح شوف الكود فالخاص')
+                              msg.edit('**تم ارسال الرابط في الخاص | مدة الرابط: يوم | عدد المستخدمين: 10**')
                           
                           });
                         message.channel.createInvite({
